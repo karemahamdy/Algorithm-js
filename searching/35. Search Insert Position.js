@@ -16,3 +16,4 @@ var searchInsert = function (arr, elem) {
   }
   return arr[middle] === elem ? middle : middle + 1;
 }
+
