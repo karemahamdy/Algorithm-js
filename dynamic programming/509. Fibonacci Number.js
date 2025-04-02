@@ -4,8 +4,26 @@
   // F(0) = 0, F(1) = 1
 // F(n) = F(n - 1) + F(n - 2), for n > 1.
 
-var fib = function (num) {
-  if (num == 0) return 0
-  if (num == 1) return 1
-  return fib(num - 1) + fib(num - 2);
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function (n) {
+  if (n <= 1) {
+    return n;
+  }
+
+  // Declare an array to store Fibonacci numbers
+  const f = new Array(n + 1); // 1 extra to handle case, n = 0
+
+  // 0th and 1st numbers of the series are 1
+  f[0] = 1;
+  f[1] = 1;
+
+  for (let i = 2; i <= n; i++) {
+    // Add the previous 2 numbers in the series and store it
+    f[i] = f[i - 1] + f[i - 2];
+  }
+
+  return f[n];
 };
